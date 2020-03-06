@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
-  "parameters": {
+"parameters": {
     "storageAccountType": {
       "type": "string",
       "defaultValue": "Standard_LRS",
@@ -12,13 +12,6 @@
         "Standard_RAGRS",
         "Premium_LRS"
       ],
-      "builtInRoleType": {
-    "type": "string",
-    "defaultValue": "Contributor"
-     },
-     "rbacGuid": {
-       "type": "string"
-       },
       "metadata": {
         "description": "Storage Account type"
       }
@@ -34,7 +27,15 @@
       "type": "securestring",
       "metadata": {
         "description": "Virtual Machine password"
-      }
+      },
+      "builtInRoleType": {
+    "type": "string",
+    "defaultValue": "Reader"
+},
+"rbacGuid": {
+    "type": "string"
+},
+      
     },
     "dnsNameForPublicIP": {
       "type": "string",
