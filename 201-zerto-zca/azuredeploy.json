@@ -5,6 +5,13 @@
     "storageAccountType": {
       "type": "string",
       "defaultValue": "Standard_LRS",
+      "builtInRoleType": {
+    "type": "string",
+    "defaultValue": "Contributor"
+},
+"rbacGuid": {
+    "type": "string"
+}
       "allowedValues": [
         "Standard_LRS",
         "Standard_ZRS",
