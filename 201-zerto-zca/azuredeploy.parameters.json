@@ -10,6 +10,13 @@
       },
       "dnsNameForPublicIP":{  
          "value":"GEN-UNIQUE"
+      },
+      "builtInRoleType": {
+         "type": "string",
+         "defaultValue": "Contributor"
+      },
+      "rbacGuid": {
+         "type": "string"
       }
    }
 }
