@@ -57,10 +57,24 @@
     "vmStorageAccountContainerName": "vhds",
     "vmNicName": "[concat(variables('vmName'), 'NetworkInterface')]",
     "pipName": "pip",
+     "Reader": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/', 'b24988ac-6180-42a0-ab88-20f7382dd24c')]",
     "nsgName": "zca-nsg",
     "newStorageAccountName": "[concat('zerto', uniqueString(resourceGroup().id))]"
   },
   "resources": [
+    {
+    "apiVersion": "2017-09-01",
+    "type": "Microsoft.Authorization/roleAssignments",
+    "name": "[parameters('rbacGuid')]",
+    "properties": {
+        "roleDefinitionId": "[variables(parameters('builtInRoleType'))]",
+        "principalId": "[reference(variables('vmResourceId'), '2017-12-01', 'Full').identity.principalId]",
+        "scope": "[resourceGroup().id]"
+    },
+     "dependsOn": [
+        "[concat('Microsoft.Compute/virtualMachines/', parameters('vmName'))]"
+    ]
+},
     {
       "apiVersion": "2018-02-01",
       "name": "pid-84d2edc4-86bd-439c-8373-e9f04e0f5ad2",
