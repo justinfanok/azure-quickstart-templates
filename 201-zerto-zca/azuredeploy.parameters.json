@@ -1,22 +1,12 @@
-{  
-   "$schema":"https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json",
-   "contentVersion":"1.0.0.0",
-   "parameters":{                  
-      "vmAdminUserName":{  
-         "value":"GEN-UNIQUE"
-      },
-      "vmAdminPassword":{  
-         "value":"GEN-PASSWORD"
-      },
-      "dnsNameForPublicIP":{  
-         "value":"GEN-UNIQUE"
-      },
-      "builtInRoleType": {
-         "type": "string",
-         "defaultValue": "Contributor"
-      },
-      "rbacGuid": {
-         "type": "string"
-      }
-   }
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "GEN-UNIQUE"
+    },
+    "adminPassword": {
+      "value": "GEN-PASSWORD"
+    }
+  }
 }
