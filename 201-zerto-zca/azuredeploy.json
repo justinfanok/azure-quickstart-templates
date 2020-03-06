@@ -155,6 +155,9 @@
       "name": "[variables('vmName')]",
       "type": "Microsoft.Compute/virtualMachines",
       "location": "[parameters('location')]",
+      "identity": {
+    "type": "SystemAssigned"
+      },   
       "apiVersion": "2017-03-30",
       "dependsOn": [
         "[resourceId('Microsoft.Storage/storageAccounts', variables('newStorageAccountName'))]",
